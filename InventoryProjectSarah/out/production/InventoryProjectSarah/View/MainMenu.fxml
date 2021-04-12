@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainMenuController">
+   <children>
+      <Label text="Inventory Management System">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <HBox alignment="BOTTOM_CENTER" layoutY="39.0" prefHeight="361.0" prefWidth="800.0" spacing="30.0">
+         <children>
+            <VBox prefHeight="361.0" prefWidth="350.0">
+               <children>
+                  <HBox prefHeight="29.0" prefWidth="350.0" spacing="160.0">
+                     <children>
+                        <Label text="Parts">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="partSearchTxt" onAction="#onActionPart" promptText="Search by Part ID or Name" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="partTableView" prefHeight="331.0" prefWidth="350.0">
+                    <columns>
+                      <TableColumn fx:id="PartIdCol" prefWidth="87.0" text="Part ID" />
+                      <TableColumn fx:id="PartNameCol" prefWidth="87.0" text="Part Name" />
+                        <TableColumn fx:id="partInvCol" prefWidth="87.0" text="Inventory Level" />
+                        <TableColumn fx:id="partCostCol" prefWidth="87.0" text="Cost per Unit" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button minWidth="55.0" mnemonicParsing="false" onAction="#onActionPartAdd" text="Add" />
+                        <Button minWidth="55.0" mnemonicParsing="false" onAction="#onActionPartModify" text="Modify" />
+                        <Button minWidth="55.0" mnemonicParsing="false" onAction="#onActionPartDelete" text="Delete" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="361.0" prefWidth="350.0">
+               <children>
+                  <HBox prefHeight="29.0" prefWidth="350.0" spacing="110.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="85.0" text="Products">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="productSearchTxt" onAction="#onActionProduct" promptText="Search by Product ID or Name" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="productTableView" prefHeight="331.0" prefWidth="350.0">
+                    <columns>
+                      <TableColumn fx:id="productIdCol" prefWidth="87.0" text="Product ID" />
+                      <TableColumn fx:id="productNameCol" prefWidth="87.0" text="Product Name" />
+                        <TableColumn fx:id="productInvCol" prefWidth="87.0" text="Inventory Level" />
+                        <TableColumn fx:id="productCostCol" prefWidth="87.0" text="Price/Cost per Unit" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button minWidth="55.0" mnemonicParsing="false" onAction="#onActionProductAdd" text="Add" />
+                        <Button minWidth="55.0" mnemonicParsing="false" onAction="#onActionProductModify" text="Modify" />
+                        <Button minWidth="55.0" mnemonicParsing="false" onAction="#onActionProductDelete" text="Delete" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button layoutX="668.0" layoutY="411.0" minWidth="55.0" mnemonicParsing="false" onAction="#onActionExit" text="Exit" />
+   </children>
+</AnchorPane>
